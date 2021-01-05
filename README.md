@@ -7,7 +7,7 @@
 ![zipi-smkTest | 412x297, 20%](./docs/zipi.png)
 # Zipi-SmkTest
 
-<p align="center">
+<p align="left">
   <img src="./docs/zipi.png" width="256" title="Github Logo">
 </p>
 
