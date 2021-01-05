@@ -5,17 +5,13 @@
 [![NodeJS](https://img.shields.io/badge/-NodeJs-3CA80B?style=flat-square&logo=nodejs&logoColor=white&link=https://nodejs.org/en/)](https://nodejs.org/en/)
 [![Zipi-Smoke-Test](https://img.shields.io/badge/-web-black?style=flat-square&labelColor=3589C4&logo=web&logoColor=white&link)](https://cecilio-cannav.github.io/zipi-smkTest/)
 
-# Zipi-SmkTest
 <p align="left" src="https://cecilio-cannav.github.io/zipi-smkTest/">
   <img src="./docs/zipi.png" width="256" title="Smoke-Test">
 </p>
 
-
-
-Zipi-SmokeTest: add easy smoke-test in your project:
+Zipi-SmokeTest: 
 ====================
 Zipi-SmkTest: Is a service developed to avoid sporadic failures in development environments. Applying Smoke-Test techniques. The service performs verifications of environments composed of micro-services. It is a great alternative to remediate sporadic failures that cause wasted time in later stages of development.
-
 
 
 Content:
