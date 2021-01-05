@@ -5,7 +5,7 @@
 [![NodeJS](https://img.shields.io/badge/-NodeJs-3CA80B?style=flat-square&logo=nodejs&logoColor=white&link=https://nodejs.org/en/)](https://nodejs.org/en/)
 
 
-![zipi-smkTest | 512x397, 20%](./docs/zipi.png)
+![zipi-smkTest | 412x297, 20%](./docs/zipi.png)
 # Zipi-SmkTest
 
 zipi-smktest: Is a service developed to avoid sporadic failures in development environments. Applying Smoke-Test techniques. The service performs verifications of environments composed of micro-services. It is a great alternative to remediate sporadic failures that cause wasted time in later stages of development.
