@@ -2,7 +2,7 @@
 
 <p align="left">
   <a href="https://nodejs.org/en/">
-   <img alt="nodejs" src="https://cdn0.iconfinder.com/data/icons/designer-skills/128/node-js-512.png">
+   <img alt="nodejs" src="">
   </a> 
   <a href="https://github.com/actions/setup-node/actions?query=workflow%3Aversions">
    <img alt="versions status" src="https://github.com/actions/setup-node/workflows/versions/badge.svg">
