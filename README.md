@@ -1,5 +1,5 @@
 
-[![docker](https://www.docker.com/)]
+<!-- [![docker](https://www.docker.com/)] -->
 
 # zipi-smkTest
 
