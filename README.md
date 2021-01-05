@@ -1,5 +1,5 @@
 <!-- TODO Define Badge -->
-[![Docker](https://hub.docker.com/r/cannit/zipi_smktest)](https://www.docker.com/)
+[![Docker](https://img.shields.io/badge/-Docker-3589C4?style=flat-square&labelColor=3589C4&logo=docker&logoColor=white&link=https://www.docker.com/)](https://hub.docker.com/r/cannit/zipi_smktest)
 [![Kubernetes](https://img.shields.io/badge/-kubernetes-3875A0?style=flat-square&logo=kubernetes&logoColor=white&link=https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/)](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/)
 [![NodeJS](https://img.shields.io/badge/-NodeJs-3CA80B?style=flat-square&logo=nodejs&logoColor=white&link=https://nodejs.org/en/)](https://nodejs.org/en/)
 [![Zipi-Smoke-Test](https://img.shields.io/badge/-web-black?style=flat-square&labelColor=3589C4&logo=web&logoColor=white&link)](https://cecilio-cannav.github.io/zipi-smkTest/)
