@@ -1,0 +1,45 @@
+{
+  "BUILD_INTEGRITY": {
+    "SERVICES_UP": true
+  },
+
+  "SERVICES_LIVE": {
+    "SERVICES_UP": true,
+    "PING_TCP_NETWORK": true
+  },
+
+  "EVERYTHING_UP": {
+    "SERVICES_UP": true,
+    "PING_TCP_NETWORK": true,
+    "VOLUME_PERMITS": true
+  },
+
+  "SERVICE_AVAILABILITY": {
+    "SERVICES_UP": true,
+    "PING_TCP_NETWORK": true,
+    "LOG_CHECK": true,
+    "VOLUME_PERMITS": true,
+    "ACTIVATE_ENDPOINT": true
+  },
+
+  "COMMUNICATION_BTW_SERVICE": {
+    "PING_TCP_NETWORK": true,
+    "SERVICES_UP": true,
+    "LOG_CHECK": true,
+    "VOLUME_PERMITS": true,
+    "ACTIVATE_ENDPOINT": true,
+    "CROSS_LOGS": true
+  },
+
+  "ENDPOINTS_AVAILABILITY": {
+    "SERVICES_UP": true,
+    "PING_TCP_NETWORK": true,
+    "LOG_CHECK": true,
+    "VOLUME_PERMITS": true,
+    "ACTIVATE_ALL_ENDPOINT": true,
+    "CROSS_LOGS": true
+  }
+
+}
+
+
