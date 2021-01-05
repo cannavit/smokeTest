@@ -6,7 +6,7 @@
 
 
 # Zipi-SmkTest
-<p align="left">
+<p align="left" src="https://cecilio-cannav.github.io/zipi-smkTest/">
   <img src="./docs/zipi.png" width="256" title="Smoke-Test">
 </p>
 
