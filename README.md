@@ -8,7 +8,7 @@
 # Zipi-SmkTest
 
 <p align="center">
-  <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" width="256" title="Github Logo">
+  <img src="./docs/zipi.png" width="256" title="Github Logo">
 </p>
 
 zipi-smktest: Is a service developed to avoid sporadic failures in development environments. Applying Smoke-Test techniques. The service performs verifications of environments composed of micro-services. It is a great alternative to remediate sporadic failures that cause wasted time in later stages of development.
