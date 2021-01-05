@@ -10,23 +10,16 @@
   <img src="./docs/zipi.png" width="256" title="Smoke-Test">
 </p>
 
-zipi-smktest: Is a service developed to avoid sporadic failures in development environments. Applying Smoke-Test techniques. The service performs verifications of environments composed of micro-services. It is a great alternative to remediate sporadic failures that cause wasted time in later stages of development.
 
 
-Bitbucket Supported Markdown for READMEs, comments, and Wiki
+Zipi-SmokeTest: add easy smoke-test in your project:
 ====================
-
-[Markdown][fireball] for readmes is pretty popular.  So, I've given you a demo
-here of all the markup we support. In some cases, I copied the doc/examples entirely from the Fireball Markdown site. 
-
-I didn't duplicate all the Markdown doc everything tho. For the entire docs and a deeper explanation of Markdown, you still need to go to the [Markdown][fireball] site.
-
-You can also use [Bitbucket mark up][BBmarkup] in comments, issues, and commit messages.
-
-On this page:
+Zipi-SmkTest: Is a service developed to avoid sporadic failures in development environments. Applying Smoke-Test techniques. The service performs verifications of environments composed of micro-services. It is a great alternative to remediate sporadic failures that cause wasted time in later stages of development.
 
 
 
+Content:
+===================
 
 * [How install the service](#markdown-header-span-elements)
 	* [Build service use docker-compose.yml](#markdown-header-emphasis)
