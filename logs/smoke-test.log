@@ -2272,3 +2272,73 @@
 2020-11-25T21:05:19.580Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
 2020-11-25T21:05:21.599Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
 2020-11-25T21:05:23.646Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
+2021-01-05T14:56:43.228Z [[33mwarn[39m] editionService [33m USE SERVICES NAME OF AUTOMATIC WAY[39m
+2021-01-05T14:56:47.629Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
+2021-01-05T14:56:43.233Z [[32minfo[39m] editionService [32mWAIT_TIME_SECONDS: [39m
+2021-01-05T14:56:43.318Z [[33mwarn[39m] editionService [33mPING: false | TRY NO: 1 | HOST: edutelling-memcached |[39m
+2021-01-05T14:56:43.318Z [[33mwarn[39m] editionService [33mSERVICE:edutelling-memcached| PING: false | TRY NO: 1 | HOST: edutelling-memcached | TIME: 0[39m
+2021-01-05T14:56:44.417Z [[33mwarn[39m] editionService [33mPING: false | TRY NO: 1 | HOST: edutelling-orientdb |[39m
+2021-01-05T14:56:44.417Z [[33mwarn[39m] editionService [33mSERVICE:edutelling-orientdb| PING: false | TRY NO: 2 | HOST: edutelling-orientdb | TIME: 0.09[39m
+2021-01-05T14:56:45.516Z [[33mwarn[39m] editionService [33mPING: false | TRY NO: 1 | HOST: edutelling-orientdb |[39m
+2021-01-05T14:56:45.516Z [[33mwarn[39m] editionService [33mSERVICE:edutelling-orientdb| PING: false | TRY NO: 3 | HOST: edutelling-orientdb | TIME: 1.188[39m
+2021-01-05T14:56:46.619Z [[33mwarn[39m] editionService [33mPING: false | TRY NO: 1 | HOST: mongodb-mernt |[39m
+2021-01-05T14:56:46.619Z [[33mwarn[39m] editionService [33mSERVICE:mongodb-mernt| PING: false | TRY NO: 4 | HOST: mongodb-mernt | TIME: 2.287[39m
+2021-01-05T14:56:47.767Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
+2021-01-05T14:56:47.866Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
+2021-01-05T14:56:47.975Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
+2021-01-05T14:56:48.689Z [[31merror[39m] scannSwagger [31mNot is possible get token[39m
+2021-01-05T15:06:02.518Z [[33mwarn[39m] editionService [33m USE SERVICES NAME OF AUTOMATIC WAY[39m
+2021-01-05T15:06:07.044Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
+2021-01-05T15:06:02.526Z [[32minfo[39m] editionService [32mWAIT_TIME_SECONDS: [39m
+2021-01-05T15:06:02.713Z [[33mwarn[39m] editionService [33mPING: false | TRY NO: 1 | HOST: edutelling-memcached |[39m
+2021-01-05T15:06:02.714Z [[33mwarn[39m] editionService [33mSERVICE:edutelling-memcached| PING: false | TRY NO: 1 | HOST: edutelling-memcached | TIME: 0[39m
+2021-01-05T15:06:03.811Z [[33mwarn[39m] editionService [33mPING: false | TRY NO: 1 | HOST: edutelling-orientdb |[39m
+2021-01-05T15:06:03.811Z [[33mwarn[39m] editionService [33mSERVICE:edutelling-orientdb| PING: false | TRY NO: 2 | HOST: edutelling-orientdb | TIME: 0.193[39m
+2021-01-05T15:06:04.929Z [[33mwarn[39m] editionService [33mPING: false | TRY NO: 1 | HOST: edutelling-orientdb |[39m
+2021-01-05T15:06:04.930Z [[33mwarn[39m] editionService [33mSERVICE:edutelling-orientdb| PING: false | TRY NO: 3 | HOST: edutelling-orientdb | TIME: 1.29[39m
+2021-01-05T15:06:06.034Z [[33mwarn[39m] editionService [33mPING: false | TRY NO: 1 | HOST: mongodb-mernt |[39m
+2021-01-05T15:06:06.034Z [[33mwarn[39m] editionService [33mSERVICE:mongodb-mernt| PING: false | TRY NO: 4 | HOST: mongodb-mernt | TIME: 2.409[39m
+2021-01-05T15:06:07.161Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
+2021-01-05T15:06:07.261Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
+2021-01-05T15:06:07.366Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
+2021-01-05T15:06:08.154Z [[31merror[39m] scannSwagger [31mNot is possible get token[39m
+2021-01-05T15:09:48.257Z [[33mwarn[39m] editionService [33m USE SERVICES NAME OF AUTOMATIC WAY[39m
+2021-01-05T15:09:52.598Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
+2021-01-05T15:09:48.263Z [[32minfo[39m] editionService [32mWAIT_TIME_SECONDS: [39m
+2021-01-05T15:09:48.351Z [[33mwarn[39m] editionService [33mPING: false | TRY NO: 1 | HOST: edutelling-memcached |[39m
+2021-01-05T15:09:48.351Z [[33mwarn[39m] editionService [33mSERVICE:edutelling-memcached| PING: false | TRY NO: 1 | HOST: edutelling-memcached | TIME: 0[39m
+2021-01-05T15:09:49.433Z [[33mwarn[39m] editionService [33mPING: false | TRY NO: 1 | HOST: edutelling-orientdb |[39m
+2021-01-05T15:09:49.433Z [[33mwarn[39m] editionService [33mSERVICE:edutelling-orientdb| PING: false | TRY NO: 2 | HOST: edutelling-orientdb | TIME: 0.092[39m
+2021-01-05T15:09:50.515Z [[33mwarn[39m] editionService [33mPING: false | TRY NO: 1 | HOST: edutelling-orientdb |[39m
+2021-01-05T15:09:50.515Z [[33mwarn[39m] editionService [33mSERVICE:edutelling-orientdb| PING: false | TRY NO: 3 | HOST: edutelling-orientdb | TIME: 1.175[39m
+2021-01-05T15:09:51.590Z [[33mwarn[39m] editionService [33mPING: false | TRY NO: 1 | HOST: mongodb-mernt |[39m
+2021-01-05T15:09:51.591Z [[33mwarn[39m] editionService [33mSERVICE:mongodb-mernt| PING: false | TRY NO: 4 | HOST: mongodb-mernt | TIME: 2.256[39m
+2021-01-05T15:09:52.725Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
+2021-01-05T15:09:52.825Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
+2021-01-05T15:09:52.927Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
+2021-01-05T15:09:53.630Z [[31merror[39m] scannSwagger [31mNot is possible get token[39m
+2021-01-05T15:13:55.955Z [[33mwarn[39m] editionService [33m USE SERVICES NAME OF AUTOMATIC WAY[39m
+2021-01-05T15:14:00.455Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
+2021-01-05T15:13:55.966Z [[32minfo[39m] editionService [32mWAIT_TIME_SECONDS: [39m
+2021-01-05T15:13:56.135Z [[33mwarn[39m] editionService [33mPING: false | TRY NO: 1 | HOST: edutelling-memcached |[39m
+2021-01-05T15:13:56.135Z [[33mwarn[39m] editionService [33mSERVICE:edutelling-memcached| PING: false | TRY NO: 1 | HOST: edutelling-memcached | TIME: 0[39m
+2021-01-05T15:13:57.221Z [[33mwarn[39m] editionService [33mPING: false | TRY NO: 1 | HOST: edutelling-orientdb |[39m
+2021-01-05T15:13:57.221Z [[33mwarn[39m] editionService [33mSERVICE:edutelling-orientdb| PING: false | TRY NO: 2 | HOST: edutelling-orientdb | TIME: 0.175[39m
+2021-01-05T15:13:58.329Z [[33mwarn[39m] editionService [33mPING: false | TRY NO: 1 | HOST: edutelling-orientdb |[39m
+2021-01-05T15:13:58.329Z [[33mwarn[39m] editionService [33mSERVICE:edutelling-orientdb| PING: false | TRY NO: 3 | HOST: edutelling-orientdb | TIME: 1.261[39m
+2021-01-05T15:13:59.444Z [[33mwarn[39m] editionService [33mPING: false | TRY NO: 1 | HOST: mongodb-mernt |[39m
+2021-01-05T15:13:59.444Z [[33mwarn[39m] editionService [33mSERVICE:mongodb-mernt| PING: false | TRY NO: 4 | HOST: mongodb-mernt | TIME: 2.369[39m
+2021-01-05T15:14:00.672Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
+2021-01-05T15:14:00.893Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
+2021-01-05T15:14:01.059Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
+2021-01-05T15:14:02.018Z [[31merror[39m] scannSwagger [31mNot is possible get token[39m
+2021-01-05T15:13:45.715Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
+2021-01-05T15:13:48.368Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
+2021-01-05T15:13:50.386Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
+2021-01-05T15:13:52.394Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
+2021-01-05T15:13:54.414Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
+2021-01-05T15:13:56.431Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
+2021-01-05T15:13:58.444Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
+2021-01-05T15:14:00.473Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
+2021-01-05T15:14:02.490Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m
+2021-01-05T15:14:04.502Z [[32minfo[39m] editionService [32mEVAL OF COMMAND: [39m

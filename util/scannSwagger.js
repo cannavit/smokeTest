@@ -35,8 +35,14 @@ async function getApisFromSwaggerFile() {
     var bodySwagger = swaggerFile.substring(searchInit, searchEnd)
    
     eval(bodySwagger) // Get variable options. 
-
-    var paths = options.swaggerDoc.paths
+    
+    var paths
+    try {
+     paths = options.swaggerDoc.paths 
+    } catch (error) {
+     paths = [] 
+    }
+    
     //! Rule, serach [GET] Apis with not parmams. 
 
     var pathsName = Object.keys(paths);

@@ -2,3 +2,4 @@ node_modules
 ~/.vscode-root
 vscode
 .idea
+./logs/TEST/smokeTestResults.json
