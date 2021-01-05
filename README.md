@@ -1,5 +1,6 @@
 
 <!-- [![docker](https://www.docker.com/)] -->
+[![Language](NodeJS)](https://shields.io/)
 
 # zipi-smkTest
 
