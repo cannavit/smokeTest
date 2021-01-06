@@ -44,7 +44,7 @@ Content:
 ## Run service 
      docker run -d --name=smktest cannit/zipi_smktest:latest
 		
-## Run example of smoke-test (Pass Case)
+## Run example of smoke-test
 You can use the following example to understand how it works in service. In this guide you will find two examples, one of a fault environment where the Smoke-Test service detects the problem and makes a report. The other example shows a case where the problem has been solved and the service passes the Smoke-test.
 
 ### Case: Pase Test
