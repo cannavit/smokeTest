@@ -21,8 +21,8 @@ Content:
 * [Smoke Test Coverage](#markdown-header-span-elements) 
 * [How use the service with Docker](#markdown-header-span-elements)
 	* [Run service](#markdown-header-emphasis)
-	* [Run example of smoke-test (Pass Case)](#markdown-header-emphasis)
-
+	* [Run example of smoke-test](#markdown-header-emphasis)
+		*[Case: Pase Test](#markdown-header-emphasis)
 
 
 # Smoke Test Coverage:  
@@ -46,3 +46,9 @@ Content:
 		
 ## Run example of smoke-test (Pass Case)
 You can use the following example to understand how it works in service. In this guide you will find two examples, one of a fault environment where the Smoke-Test service detects the problem and makes a report. The other example shows a case where the problem has been solved and the service passes the Smoke-test.
+
+### Case: Pase Test
+In this case, two services are shown that have to be connected in order to function. The first service is a database (MongoDB) and the second service is the Django backend, with a JWT authentication service.
+
+
+
