@@ -39,5 +39,5 @@ Content:
 # How use docker service
 
 ## Docker pull image:
-   docker build cannit/zipi_smktest:latest
-   
+                docker build cannit/zipi_smktest:latest
+		git commit -am "By typing this command I am saving a collection of saved files."   
