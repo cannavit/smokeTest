@@ -21,7 +21,7 @@ Content:
 * [Smoke Test Coverage](#markdown-header-span-elements) 
 * [How use the service with Docker](#markdown-header-span-elements)
 	* [Run service](#markdown-header-emphasis)
-	* [Run example of smoke-test (Pass Case)]
+	* [Run example of smoke-test (Pass Case)](#markdown-header-emphasis)
 
 
 
