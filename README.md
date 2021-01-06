@@ -49,9 +49,44 @@ You can use the following example to understand how it works in service. In this
 
 ### Case: Pase Test
 In this case, two services are shown that have to be connected in order to function. The first service is a database (MongoDB) and the second service is the Django backend, with a JWT authentication service.
+Is neccesary for this example suite create one file with the name docker-compose.yml
 
-#### 1) Run Database (MongoDB)
-	docker run -d --name=mongodb -p 27017:27017 -e MONGODB_USERNAME=admin -e MONGODB_PASSWORD=admin -e MONGODB_DATABASE=admin -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=admin --network=host -t mongo:latest
+#### 1) Run example_1 using docker-compose.yml (MongoDB)
+    # docker-compose.yml
+    version: '3.7'
+    services:
+      database:
+        image: mongo:latest
+        container_name: database
+        environment:
+          MONGO_INITDB_ROOT_USERNAME: admin
+          MONGO_INITDB_ROOT_PASSWORD: admin
+          MONGODB_USERNAME: admin
+          MONGODB_PASSWORD: admin
+          MONGODB_DATABASE: admin
+        ports:
+          - 27017:27017
+        networks:
+          - host      
+      
+      backend:
+        build: .
+        container_name: backend
+        ports:
+          - 8000:8000
+        depends_on:
+          - database  
+        environment:
+          - DJANGO_ENV=docker  
+        command:  >
+              bash -c "python manage.py migrate
+              && python manage.py shell -c \"from django.contrib.auth.models import User;     User.objects.filter(username='admin1').exists() or User.objects.create_superuser('admin', 'admin1@example.com', 'admin')\"
+              && python manage.py runserver 0.0.0.0:8000"
+        networks:
+          - host
+    networks:
+      host:
+
 
 #### 2) Run Backend (Django)
 
