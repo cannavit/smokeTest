@@ -68,9 +68,9 @@ Is neccesary for this example suite create one file with the name docker-compose
           - 27017:27017
         networks:
           - host      
-      
+
       backend:
-        build: .
+        image: cannit/zipi_backend_example_1:latest
         container_name: backend
         ports:
           - 8000:8000
@@ -80,10 +80,24 @@ Is neccesary for this example suite create one file with the name docker-compose
           - DJANGO_ENV=docker  
         command:  >
               bash -c "python manage.py migrate
-              && python manage.py shell -c \"from django.contrib.auth.models import User;     User.objects.filter(username='admin1').exists() or User.objects.create_superuser('admin', 'admin1@example.com', 'admin')\"
+              && python manage.py shell -c \"from django.contrib.auth.models import User; User.objects.filter(username='admin1').exists() or User.objects.create_superuser('admin', 'admin1@example.com', 'admin')\"
               && python manage.py runserver 0.0.0.0:8000"
         networks:
           - host
+
+      smoke-test: 
+        image:  cannit/zipi_smktest:latest
+        container_name: smoke-test
+        depends_on:
+          - backend
+        privileged: true  
+        volumes:
+          - /var/run/docker.sock:/var/run/docker.sock
+        environment:
+            NODE_ENV: 'docker'
+        networks:
+          - host 
+
     networks:
       host:
 
