@@ -6,7 +6,7 @@
 [![GitHub](https://img.shields.io/badge/-github-black?style=flat-square&labelColor=black&logo=github&logoColor=white&link)](https://github.com/cecilio-cannav/zipi-smkTest)
 
 <p align="left" src="https://cecilio-cannav.github.io/zipi-smkTest/">
-  <img src="./docs/zipi.png" width="256" title="Smoke-Test">
+  <img src="https://raw.githubusercontent.com/cecilio-cannav/zipi-smkTest/master/docs/zipi.png" width="256" title="Smoke-Test">
 </p>
 
 Zipi-SmokeTest: 
