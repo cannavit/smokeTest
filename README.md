@@ -19,8 +19,8 @@ Content:
 ===================
 
 * [Smoke Test Coverage](#markdown-header-span-elements) 
-* [How install the service](#markdown-header-span-elements)
-	* [Build service use docker-compose.yml](#markdown-header-emphasis)
+* [How use the service](#markdown-header-span-elements)
+	* [Docker pull image](#markdown-header-emphasis)
 
 
 
@@ -36,7 +36,8 @@ Content:
 | Check List of EndPoints             | OK                           |  -          |
 
 
+# How use docker service
 
-
-# Build service use docker-compose.yml
-
+## Docker pull image:
+   docker build cannit/zipi_smktest:latest
+   
