@@ -19,8 +19,8 @@ Content:
 ===================
 
 * [Smoke Test Coverage](#markdown-header-span-elements) 
-* [How use the service](#markdown-header-span-elements)
-	* [Docker: Pull smk-test service](#markdown-header-emphasis)
+* [How use the service with Docker](#markdown-header-span-elements)
+	* [Run service](#markdown-header-emphasis)
 
 
 
@@ -38,12 +38,9 @@ Content:
 
 
 
-# How use docker service
+# How use the service with Docker
 
-## Docker: Pull smk-test service
-     docker build cannit/zipi_smktest:latest
-
-## Docker: Run smk-test 
-     docker run cannit/zipi_smktest:latest
+## Run service 
+     docker run -d --name=smktest cannit/zipi_smktest:latest
 		
 		
