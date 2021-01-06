@@ -20,7 +20,7 @@ Content:
 
 * [Smoke Test Coverage](#markdown-header-span-elements) 
 * [How use the service](#markdown-header-span-elements)
-	* [Docker pull image](#markdown-header-emphasis)
+	* [Docker: Pull smk-test service](#markdown-header-emphasis)
 
 
 
@@ -38,6 +38,10 @@ Content:
 
 # How use docker service
 
-## Docker pull image:
+## Docker: Pull smk-test service
                 docker build cannit/zipi_smktest:latest
-		git commit -am "By typing this command I am saving a collection of saved files."   
+
+## Docker: Run smk-test 
+                docker run cannit/zipi_smktest:latest
+		
+		
