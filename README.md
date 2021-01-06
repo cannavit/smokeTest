@@ -13,12 +13,28 @@ Zipi-SmokeTest:
 ====================
 Zipi-SmkTest: Is a service developed to avoid sporadic failures in development environments. Applying Smoke-Test techniques. The service performs verifications of environments composed of micro-services. It is a great alternative to remediate sporadic failures that cause wasted time in later stages of development.
 
+Keyworld: 
 
 Content:
 ===================
 
+* [Smoke Test Coverage](#markdown-header-span-elements) 
 * [How install the service](#markdown-header-span-elements)
 	* [Build service use docker-compose.yml](#markdown-header-emphasis)
+
+
+
+# Smoke Test Coverage:  
+
+| Test Coverage                       | Docker                       | Kubernetes  |
+| :---                                | :---                         | :---:       | 
+| Check TCP-Network                   | OK                           |  -          |
+| Check Volume Access                 | OK                           |  -          |
+| Check Logs                          | OK                           |  -          |
+| Check EndPoints                     | OK                           |  -          |
+| Check Cross Connection              | OK                           |  -          |
+| Check List of EndPoints             | OK                           |  -          |
+
 
 
 
