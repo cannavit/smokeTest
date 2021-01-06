@@ -22,7 +22,7 @@ Content:
 * [How use the service with Docker](#markdown-header-span-elements)
 	* [Run service](#markdown-header-emphasis)
 	* [Run example of smoke-test](#markdown-header-emphasis)
-		*[Case: Pase Test](#markdown-header-emphasis)
+		* [Case: Pase Test](#markdown-header-emphasis)
 
 
 # Smoke Test Coverage:  
