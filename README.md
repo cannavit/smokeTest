@@ -53,3 +53,6 @@ In this case, two services are shown that have to be connected in order to funct
 #### 1) Run Database (MongoDB)
 	docker run -p 27017:27017 --name mongodb -d mongo:latest -e MONGO_INITDB_ROOT_USERNAME admin -e MONGO_INITDB_ROOT_PASSWORD admin -e MONGODB_USERNAME admin -e MONGODB_PASSWORD admin -e MONGODB_DATABASE admin
 
+#### 2) Run Backend (Django)
+
+#### 3) Run Smoke-Test service (zipi-smk-test)
