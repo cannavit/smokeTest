@@ -34,14 +34,16 @@ Content:
 | Check EndPoints                     | OK                           |  -          |
 | Check Cross Connection              | OK                           |  -          |
 | Check List of EndPoints             | OK                           |  -          |
+| Monitoring Resources                | OK                           |  -          |
+
 
 
 # How use docker service
 
 ## Docker: Pull smk-test service
-                docker build cannit/zipi_smktest:latest
+     docker build cannit/zipi_smktest:latest
 
 ## Docker: Run smk-test 
-                docker run cannit/zipi_smktest:latest
+     docker run cannit/zipi_smktest:latest
 		
 		
