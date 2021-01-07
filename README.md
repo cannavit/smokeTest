@@ -94,7 +94,9 @@ Is neccesary for this example suite create one file with the name docker-compose
         volumes:
           - /var/run/docker.sock:/var/run/docker.sock
         environment:
-            NODE_ENV: 'docker'
+            ZIPI_CONFIGURATION: 'env_variable'
+	    RETRIES_NUMBER: 0
+	    TO_BREAK_PIPELINE: false
         networks:
           - host 
 
@@ -113,4 +115,5 @@ The following are the environment variables that can be modified in the service.
 | MODE_CONNECT                        | docker        | Is possible select connect mode (docker or kubernetes)|
 | WAIT_TIME_SECONDS                   | 10            | Waiting time for downed services | 
 | RETRIES_NUMBER                      | 3             | Number of times the test will be repeated before rhombing the pipeline. To avoid the flaky test|
+| TO_BREAK_PIPELINE                    | true         | Break the pipeline after finding a fault.
 
