@@ -23,8 +23,8 @@ Content:
 	* [Run service](#markdown-header-emphasis)
 	* [Run example of smoke-test](#markdown-header-emphasis)
 		* [Case: Pase Test](#markdown-header-emphasis)
-        * [Use of Enviroment variable in Zipi-Smk-Service](#markdown-header-emphasis)
-	        * [General settings](#markdown-header-emphasis)
+* [Use of Enviroment variable in Zipi-Smk-Service](#markdown-header-emphasis)
+        * [General settings](#markdown-header-emphasis)
 
 # Smoke Test Coverage:  
 
