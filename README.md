@@ -117,5 +117,6 @@ The following are the environment variables that can be modified in the service.
 | RETRIES_NUMBER                      | 3             | Number of times the test will be repeated before rhombing the pipeline. To avoid the flaky test|
 | TO_BREAK_PIPELINE                   | true         | Break the pipeline after finding a fault.
 | SMOKE_TEST_CRITERIA                 | SERVICE_AVAILABILITY | Select the available criteria to apply to your test case. It can be documented from the Criteria in the Smoke-Test Criteria section |
+| MONITORING_TIME                     | 20  | Time (seconds) to monitor resources before starting the test. Only available for the Docker version at this time. | 
 
 
