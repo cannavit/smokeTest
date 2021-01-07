@@ -25,6 +25,8 @@ Content:
 		* [Case: Pase Test](#markdown-header-emphasis)
 * [Use of Enviroment variable in Zipi-Smk-Service](#markdown-header-emphasis)
 	* [General settings](#markdown-header-emphasis)
+	* [Criterial settings](#markdown-header-emphasis)
+	
 
 # Smoke Test Coverage:  
 
@@ -113,7 +115,7 @@ The following are the environment variables that can be modified in the service.
 ### General settings
 This is the segment of environment variables that can be used in the general configuration of the service.
 
-| ENVIROMENT VARIABLE            | Default Value | Description  |
+| ENVIROMENT VARIABLE                | Default Value | Description  |
 | :---                                | :---          | :---         | 
 | ZIPI_CONFIGURATION                  | env_variable  |  You can select whether you want to read the configuration data from the config.json file (config_file) or from environment variables.          |
 | MODE_CONNECT                        | docker        | Is possible select connect mode (docker or kubernetes)|
@@ -123,4 +125,10 @@ This is the segment of environment variables that can be used in the general con
 | SMOKE_TEST_CRITERIA                 | SERVICE_AVAILABILITY | Select the available criteria to apply to your test case. It can be documented from the Criteria in the Smoke-Test Criteria section |
 | MONITORING_TIME                     | 20  | Time (seconds) to monitor resources before starting the test. Only available for the Docker version at this time. | 
 
+### Criterial settings
 
+These are the options directly related to the criteria that you can use.
+
+| ENVIROMENT VARIABLE            | TEST CASE  | Default Value | Description  |
+| :---                           | :---:      | :---          | :---         |
+| LOGS_ERROR_EXCEPTION           | LOG_CHECK  | [""]          | Here you can add snippets of the reported bug that you want to skip. For example: ["TypeError: Cannot read property 'count' of undefined "]|  
