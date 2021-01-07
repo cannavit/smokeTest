@@ -100,7 +100,7 @@ Is neccesary for this example suite create one file with the name docker-compose
           - ZIPI_CONFIGURATION=env_variable
           - RETRIES_NUMBER=0
           - TO_BREAK_PIPELINE=false
-	  - ENDPOINT_HOST=http://backend:8000/
+	  - ENDPOINT_HOST=http://backend:8000
         networks:
           - host 
 
