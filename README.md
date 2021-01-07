@@ -94,9 +94,9 @@ Is neccesary for this example suite create one file with the name docker-compose
         volumes:
           - /var/run/docker.sock:/var/run/docker.sock
         environment:
-            ZIPI_CONFIGURATION: 'env_variable'
-	    RETRIES_NUMBER: 0
-	    TO_BREAK_PIPELINE: false
+          - ZIPI_CONFIGURATION='env_variable'
+	  - RETRIES_NUMBER=0
+	  - TO_BREAK_PIPELINE=false
         networks:
           - host 
 
