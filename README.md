@@ -132,4 +132,4 @@ These are the options directly related to the criteria that you can use.
 | ENVIROMENT VARIABLE   | TEST CASE  | Default Value | Description  |
 | :---                  | :---:      | :---          | :---         |
 | LOGS_ERROR_EXCEPTION  | LOG_CHECK  | [""]          | Here you can add snippets of the reported bug that you want to skip. For example: ["TypeError: Cannot read property 'count' of undefined "]|  
-| ENDPOINT_HOST         | ENDPOINT   | ""            | This variable must declare the endpoint that you want to verify through TPC. Like for example www.google.com or http: // localhost: 3000 | 
+| ENDPOINT_HOST         | ENDPOINT, SWAGGER_SCANN  | ""            | This variable must declare the endpoint that you want to verify through TPC. Like for example www.google.com or http://localhost: 3000 | 
