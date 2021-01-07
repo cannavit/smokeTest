@@ -110,4 +110,5 @@ The following are the environment variables that can be modified in the service.
 | ENVIROMENT VARIABLE NAME            | Default Value | Description  |
 | :---                                | :---          | :---:       | 
 | ZIPI_CONFIGURATION                  | env_variable  |  You can select whether you want to read the configuration data from the config.json file (config_file) or from environment variables.          |
+| MODE_CONNECT                        | docker        | Is possible select connect mode (docker or kubernetes)|
 
