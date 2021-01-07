@@ -23,7 +23,7 @@ Content:
 	* [Run service](#markdown-header-emphasis)
 	* [Run example of smoke-test](#markdown-header-emphasis)
 		* [Case: Pase Test](#markdown-header-emphasis)
-
+        * [Use of Enviroment variable in Zipi-Smk-Service](#markdown-header-emphasis)
 
 # Smoke Test Coverage:  
 
@@ -51,7 +51,7 @@ You can use the following example to understand how it works in service. In this
 In this case, two services are shown that have to be connected in order to function. The first service is a database (MongoDB) and the second service is the Django backend, with a JWT authentication service.
 Is neccesary for this example suite create one file with the name docker-compose.yml
 
-#### 1) Run example_1 using docker-compose.yml (MongoDB)
+#### 1) Run example_1 using docker-compose.yml (IN PROCESS*)
     # docker-compose.yml
     version: '3.7'
     services:
@@ -101,7 +101,13 @@ Is neccesary for this example suite create one file with the name docker-compose
     networks:
       host:
 
+#### 2) Run example_2 using docker-compose.yml (IN PROCESS*)
 
-#### 2) Run Backend (Django)
+## Use of Enviroment variable in Zipi-Smk-Service
 
-#### 3) Run Smoke-Test service (zipi-smk-test)
+The following are the environment variables that can be modified in the service.
+
+| ENVIROMENT VARIABLE NAME            | Default Value | Description  |
+| :---                                | :---          | :---:       | 
+| ZIPI_CONFIGURATION                  | env_variable  |  You can select whether you want to read the configuration data from the config.json file (config_file) or from environment variables.          |
+
