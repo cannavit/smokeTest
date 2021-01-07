@@ -24,6 +24,7 @@ Content:
 	* [Run example of smoke-test](#markdown-header-emphasis)
 		* [Case: Pase Test](#markdown-header-emphasis)
         * [Use of Enviroment variable in Zipi-Smk-Service](#markdown-header-emphasis)
+	        * [General settings](#markdown-header-emphasis)
 
 # Smoke Test Coverage:  
 
@@ -108,6 +109,9 @@ Is neccesary for this example suite create one file with the name docker-compose
 ## Use of Enviroment variable in Zipi-Smk-Service
 
 The following are the environment variables that can be modified in the service.
+
+### General settings
+This is the segment of environment variables that can be used in the general configuration of the service.
 
 | ENVIROMENT VARIABLE            | Default Value | Description  |
 | :---                                | :---          | :---         | 
