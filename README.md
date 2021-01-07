@@ -134,3 +134,4 @@ These are the options directly related to the criteria that you can use.
 | :---                  | :---:      | :---          | :---         |
 | LOGS_ERROR_EXCEPTION  | LOG_CHECK  | [""]          | Here you can add snippets of the reported bug that you want to skip. For example: ["TypeError: Cannot read property 'count' of undefined "]|  
 | ENDPOINT_HOST         | ENDPOINT, SWAGGER_SCANN  | ""            | This variable must declare the endpoint that you want to verify through TPC. Like for example www.google.com or http://localhost:3000 | 
+| SERVICES_NAME         | TPC_PING   | [""]  | Here you can explicitly add the services that the test should verify. If one of these services is inaccessible, the smoke test will fail. Example ["backend", "database", "frontend"] |
