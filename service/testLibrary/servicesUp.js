@@ -1,8 +1,13 @@
 const getCommand = require("../dictionary/getCommand");
 const Table      = require("tty-table");
 const ora        = require("ora");
-
+const getConfigVariable_ENV = require("../../util/getConfigVariable")
 async function status() {
+
+  //! Load configuration.
+  const {SERVICES_NAME} = await getConfigVariable_ENV.ConfigCommands()
+  
+  
   let keyWold = 'Exited'
   //! Get service down
   let servicesName     = await getCommand.getListResutls("STATUS");
@@ -12,7 +17,8 @@ async function status() {
   let Name = await getCommand.getListResutls("SERVICE");
   
   //!Control is all services exist inside to Container Manager: 
-  let services        = global.config.SERVICES_NAME
+
+  let services        = SERVICES_NAME
   let lackService     = false
   let nameLackService = []
 
@@ -20,7 +26,7 @@ async function status() {
 
     for (const key in services) {
 
-      serviceConfigName = services[key].service
+      serviceConfigName = services[key]
 
       if (!Name.includes(serviceConfigName)){
             lackService = true

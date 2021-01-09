@@ -42,7 +42,7 @@ async function getServices() {
     logsConfigServiceBefore = {
       tag: "beforeCrossLogs",
       nameService: CHECK_SERVICE,
-      adressSave: "./checkLogsHistory/",
+      addressSave: "./checkLogsHistory/",
       commandExec: "docker",
     };
 
@@ -56,7 +56,7 @@ async function getServices() {
     logsConfigInputBefore = {
       tag: "beforeCrossLogs",
       nameService: INPUT_SERVICE,
-      adressSave: "./checkLogsHistory/",
+      addressSave: "./checkLogsHistory/",
       commandExec: "docker",
     };
 
@@ -70,7 +70,7 @@ async function getServices() {
     logsConfigServiceAfter = {
       tag: "afterCrossLogs",
       nameService: CHECK_SERVICE,
-      adressSave: "./checkLogsHistory/",
+      addressSave: "./checkLogsHistory/",
       commandExec: "docker",
     };
 
@@ -80,7 +80,7 @@ async function getServices() {
     logsConfigInputAfter = {
       tag: "afterCrossLogs",
       nameService: INPUT_SERVICE,
-      adressSave: "./checkLogsHistory/",
+      addressSave: "./checkLogsHistory/",
       commandExec: "docker",
     };
 

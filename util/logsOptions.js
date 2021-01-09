@@ -37,7 +37,7 @@ async function readdirChronoSorted(dirpath, order) {
 
 async function getNameForGenerateLog(pathControl, monitoringName , serachWorld, nameToFileForCreate) {
 
-  CLEAN_LOGS_REPORTS_NUMBER = global.config.CLEAN_LOGS_REPORTS_NUMBER
+  CLEAN_LOGS_REPORTS_NUMBER = global.config.CLEAN_LOGS_REPORTS_NUMBER || 4
   let directoryPath = await readdirChronoSorted(pathControl, -1) 
   let count = 0
   
@@ -82,7 +82,7 @@ async function saveLog(logsConfig) {
    *  @param:  logsConfig = {
                         tag: "beforeCrossLogs",
                         nameService: "edutelling-api",
-                        adressSave: ".",
+                        addressSave: ".",
                         commandExec: "docker",
                              }
    */
@@ -98,7 +98,7 @@ async function saveLog(logsConfig) {
 
   // ! Save all Logs.
 
-  let nameLogFile = logsConfig.adressSave + logsConfig.nameService + "_" + logsConfig.tag + ".json";
+  let nameLogFile = logsConfig.addressSave + logsConfig.nameService + "_" + logsConfig.tag + ".json";
   let dataOutputLogsJson = JSON.stringify({ dataLogs: allLogs }, null, 2);
   fs.writeFile(nameLogFile, dataOutputLogsJson, "utf8");
 }
@@ -109,7 +109,7 @@ module.exports.saveLog = saveLog;
 
 async function readLog(logsConfig) {
   // ! Name for read json
-  let nameLogFile = logsConfig.adressSave + logsConfig.nameService + "_" + logsConfig.tag + ".json";
+  let nameLogFile = logsConfig.addressSave + logsConfig.nameService + "_" + logsConfig.tag + ".json";
   // Get json
   var logResult = await fs.readFile(nameLogFile, "utf8");
   try {

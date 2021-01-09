@@ -33,6 +33,8 @@ const util         = require('util');
 const readdirAsync = util.promisify(fs.readdir);
 const statAsync    = util.promisify(fs.stat);
 
+const getConfigVariable_ENV = require("../../util/getConfigVariable")
+
 async function readdirChronoSorted(dirpath, order) {
   order = order || 1;
   const files = await readdirAsync(dirpath);
@@ -57,7 +59,7 @@ async function readdirChronoSorted(dirpath, order) {
 
 async function getNameForGenerateLog(pathControl, monitoringName , serachWorld, nameToFileForCreate) {
 
-  CLEAN_LOGS_REPORTS_NUMBER = global.config.CLEAN_LOGS_REPORTS_NUMBER
+  CLEAN_LOGS_REPORTS_NUMBER = global.config.CLEAN_LOGS_REPORTS_NUMBER || 4
   let directoryPath = await readdirChronoSorted(pathControl, -1) 
   let count = 0
   
@@ -99,6 +101,10 @@ const { fork }   = require('child_process');
 
 async function smktests() {
 
+  //! LOAD CONFIG PARAMS.
+
+  const { RETRIES_NUMBER } = await getConfigVariable_ENV.ConfigCommands()
+
   let dataBeforeToStart = new Date().toISOString() //* Init time of test. 
   
   let RUN_SMOKE_TEST      = true  
@@ -123,7 +129,9 @@ async function smktests() {
   
 
   //! Wait for the test
-  await sleep(global.config.WAIT_TIME_SECONDS*1000);
+  
+  const { WAIT_TIME_SECONDS } = await getConfigVariable_ENV.ConfigCommands()
+  await sleep(WAIT_TIME_SECONDS*1000);
     
   var start = new tc.nowUtc();
 
@@ -216,7 +224,8 @@ async function smktests() {
       
       COUNT_TRY_SMOKE_TEST_RUN = COUNT_TRY_SMOKE_TEST_RUN + 1
       
-      if (COUNT_TRY_SMOKE_TEST_RUN > global.config.RETRIES_NUMBER) {
+
+      if (COUNT_TRY_SMOKE_TEST_RUN > RETRIES_NUMBER) {
         RUN_SMOKE_TEST = false    
         PASS_TEST = true
       } 

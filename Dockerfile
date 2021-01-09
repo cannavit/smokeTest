@@ -17,6 +17,4 @@ COPY package.json yarn.lock /usr/src/app/
 
 RUN npm install --force
 
-EXPOSE 4010
-
 CMD yarn serve

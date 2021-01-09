@@ -9,6 +9,8 @@ const tc        = require("timezonecomplete");
 const Table     = require("tty-table");
 var colors = require('colors');
 
+const getConfigVariable_ENV = require("./getConfigVariable")
+
 function sleep(milliseconds) {
   
   const date = Date.now();
@@ -20,47 +22,47 @@ function sleep(milliseconds) {
 
 //! Run shell commands:
 async function getApisFromSwaggerFile() {
-    
-    //! Init swagger page: 
-    var ENDPOINT_SWAGGER_PAGE = global.config.ENDPOINT_SWAGGER_PAGE
-    await shell.exec(ENDPOINT_SWAGGER_PAGE, {silent: true})
-    sleep(1000)
-
-    var ENDPOINT_SCANN_SWAGGER_FROM = global.config.ENDPOINT_SCANN_SWAGGER_FROM
-    resultOfExec = await shell.exec(ENDPOINT_SCANN_SWAGGER_FROM, { silent: true });
-    
-    var swaggerFile = resultOfExec.stdout
-    var searchInit  = swaggerFile.indexOf("var options")
-    var searchEnd   = swaggerFile.indexOf('url = options.swaggerUrl || url')
-    var bodySwagger = swaggerFile.substring(searchInit, searchEnd)
-   
+  
+  //! Init swagger page: 
+  var ENDPOINT_SWAGGER_PAGE = global.config.ENDPOINT_SWAGGER_PAGE
+  await shell.exec(ENDPOINT_SWAGGER_PAGE, {silent: true})
+  sleep(1000)
+  
+  var ENDPOINT_SCANN_SWAGGER_FROM = global.config.ENDPOINT_SCANN_SWAGGER_FROM
+  resultOfExec = await shell.exec(ENDPOINT_SCANN_SWAGGER_FROM, { silent: true });
+  
+  var swaggerFile = resultOfExec.stdout
+  var searchInit  = swaggerFile.indexOf("var options")
+  var searchEnd   = swaggerFile.indexOf('url = options.swaggerUrl || url')
+  var bodySwagger = swaggerFile.substring(searchInit, searchEnd)
+  
     eval(bodySwagger) // Get variable options. 
     
     var paths
     try {
-     paths = options.swaggerDoc.paths 
+      paths = options.swaggerDoc.paths 
     } catch (error) {
-     paths = [] 
+      paths = [] 
     }
     
     //! Rule, serach [GET] Apis with not parmams. 
-
+    
     var pathsName = Object.keys(paths);
     var pathsForTest = []
     var responseList = []
     var apiList      = []
     for (const key in pathsName) {
-        path_i = paths[pathsName[key]]
-        if (Object.keys(path_i)[0] === 'get' && pathsName[key].search('{') === -1) {
-           
-          pathsForTest.push(pathsName[key])
-           responseList.push(path_i['get'].responses)   
+      path_i = paths[pathsName[key]]
+      if (Object.keys(path_i)[0] === 'get' && pathsName[key].search('{') === -1) {
+        
+        pathsForTest.push(pathsName[key])
+        responseList.push(path_i['get'].responses)   
            apiList.push('GET')
-
+           
         }
-    }
-
-    
+      }
+      
+      
     let  outData = {
       "pathsForTest": pathsForTest,
       "responseList": responseList,
@@ -68,16 +70,16 @@ async function getApisFromSwaggerFile() {
     }
     return outData
 
- }
+  }
 
 async function getTokenServiceFromCurl() {
-
+  
   var ENDPOINT_GET_TOKEN = global.config.ENDPOINT_GET_TOKEN
-
+  
   resultOfExec = await shell.exec(ENDPOINT_GET_TOKEN, { silent: true });
-
+  
   var results
-
+  
   try {
     results = JSON.parse(resultOfExec.stdout)['token'] 
     log.info("results: ", results)
@@ -85,19 +87,20 @@ async function getTokenServiceFromCurl() {
     results = ""
     log.error("Not is possible get token") 
   }
-
+  
   return results 
 }
 
 async function buildListOfCurlTest() {
   
-  var ENDPOINT_HOST = global.config.ENDPOINT_HOST
+  const { ENDPOINT_HOST } = await getConfigVariable_ENV.ConfigCommands()
+  
   var token         = await getTokenServiceFromCurl()
   var outData       = await getApisFromSwaggerFile()
   
   var pathsGetOutParams = outData.pathsForTest
   var responseList = outData.responseList
-
+  
   var len    = "it"
   var accept = "application/json" 
   var formatCurl = 'curl -X GET -H "accept-language: $LENG" -H "accept: $ACCEPT" -H "Authorization: Bearer $TOKEN" "$URL" --speed-time 10'
@@ -107,13 +110,15 @@ async function buildListOfCurlTest() {
   formatCurl = formatCurl.replace("$TOKEN", token)
 
   var curlTestList = []
+   
+  if (ENDPOINT_HOST !== ""){
 
-  for (const key in pathsGetOutParams) {
-
+    for (const key in pathsGetOutParams) {
+      
       var formatCurl_i = formatCurl
       path = ENDPOINT_HOST + '/api/v1' +pathsGetOutParams[key] 
       formatCurl_i = formatCurl_i.replace("$URL", path)
-
+      
       var data = {
         testCurl: formatCurl_i,
         path: pathsGetOutParams[key], 
@@ -121,9 +126,10 @@ async function buildListOfCurlTest() {
         apiVerbs: outData.apiList[key]
       }
       curlTestList.push(data)
-
+      
+    }
+    
   }
-
   return curlTestList
 }
 

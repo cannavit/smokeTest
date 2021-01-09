@@ -16,6 +16,8 @@ const ora = require("ora");
 const clear = require("clear");
 const { ConsoleTransportOptions } = require("winston/lib/winston/transports");
 global.config = _.merge(config["dev"], config[env]);
+const getConfigVariable_ENV = require("../../util/getConfigVariable")
+
 
 async function getBugs(logRow, service, results, detectLogBug) {
   var idRow = logRow.split("\n");
@@ -61,12 +63,16 @@ async function getBugs(logRow, service, results, detectLogBug) {
 }
 
 async function searchBugInsideLog(serviceName) {
+  
+  //! Load configuration variable: 
+  const { LOGS_ERROR_EXCEPTION } = await getConfigVariable_ENV.ConfigCommands()
+  
 
   let data
   let results         = [];
   let DATA_HISTORICAL = [];
   let detectLogBug    = true;
-  
+   
   
   serviceName = ['edutelling-api'] // temp variable
 
@@ -141,7 +147,6 @@ async function searchBugInsideLog(serviceName) {
     
     //! Get Exception:
     let isException     = false
-    let LOGS_ERROR_EXCEPTION =  global.config.LOGS_ERROR_EXCEPTION
     
      //? Search if exist exception.
     for (const key in LOGS_ERROR_EXCEPTION){
@@ -241,11 +246,14 @@ async function searchBugInsideLog(serviceName) {
 
 async function getLogsCommand() {
 
-  if (global.config.MODE_CONNECT === "manual") {
-    servicesAdress = global.config.PING.SERVICES;
+  //! GET CONFIGURATION: 
+  const {MODE_CONNECT} = await getConfigVariable_ENV.ConfigCommands()
+
+  if (MODE_CONNECT === "manual") {
+    servicesaddress = global.config.PING.SERVICES;
   }
 
-  if (global.config.MODE_CONNECT === "docker") {
+  if (MODE_CONNECT === "docker") {
     let serviceName = await selectService.getIp();
 
     // Get logs test resutls
@@ -254,11 +262,11 @@ async function getLogsCommand() {
     
   }
 
-  if (global.config.MODE_CONNECT === "kubectl") {
-    var servicesAdress = shell.exec(connetionCommand.docker.LOG + " " + serviceName, {
+  if (MODE_CONNECT === "kubectl") {
+    var servicesaddress = shell.exec(connetionCommand.docker.LOG + " " + serviceName, {
       silent: true,
     });
-    servicesAdress = servicesAdress.stdout;
+    servicesaddress = servicesaddress.stdout;
   }
   return results;
 }

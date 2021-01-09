@@ -11,10 +11,13 @@ const shell = require("shelljs");
 const ora = require("ora");
 const { forEach } = require("lodash");
 const Table = require("tty-table");
-
+const getConfigVariable_ENV = require("../../util/getConfigVariable")
 async function check() {
+  
+  //! Get the variables:  
+  const { ENDPOINT_HOST } = await getConfigVariable_ENV.ConfigCommands()
+  
   // Get parameters
-  let ENDPOINT_HOST = global.config.ENDPOINT_HOST;
   let ENDPOINT_LIST = global.config.ENDPOINT_LIST;
   let variable = {};
   let variableSaved = [];
@@ -109,7 +112,7 @@ async function check() {
     let header = [
       { value: "nameTest", width: 25, alias: "Test name" },
       { value: "apiVerb", width: 10, alias: "Api Verb" },
-      { value: "url", width: 30, alias: "Api adress" },
+      { value: "url", width: 30, alias: "Api address" },
       { value: "saveVariable", width: 30, alias: "Save variable" },
       { value: "respose", width: 12, alias: "Request code" },
       {

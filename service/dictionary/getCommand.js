@@ -7,15 +7,19 @@ const connectionCommand = require("../../service/dictionary/connetionCommand.jso
 const { Console } = require("winston/lib/winston/transports");
 global.config = _.merge(config["dev"], config[env]);
 
+const getConfigVariable_ENV = require("../../util/getConfigVariable")
+
 async function evalCommand(nameToCommand) {
 
   log.info("EVAL OF COMMAND: ", nameToCommand);
+  
+  const {MODE_CONNECT} = await getConfigVariable_ENV.ConfigCommands()
+   
+  let command = connectionCommand[MODE_CONNECT][nameToCommand];
 
-  let command = connectionCommand[global.config.MODE_CONNECT][nameToCommand];
+  var servicesaddress = shell.exec(command, { silent: true });
 
-  var servicesAdress = shell.exec(command, { silent: true });
-
-  return servicesAdress;
+  return servicesaddress;
 }
 
 module.exports.evalCommand = evalCommand;

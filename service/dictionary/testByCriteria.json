@@ -1,45 +1,45 @@
 {
-  "BUILD_INTEGRITY": {
-    "SERVICES_UP": true
+  "Execution_unit_coverage": {
+       "SERVICES_UP": true
   },
-
-  "SERVICES_LIVE": {
-    "SERVICES_UP": true,
-    "PING_TCP_NETWORK": true
+  "Service coverage": {
+       "PING_TCP_NETWORK": true
   },
-
-  "EVERYTHING_UP": {
-    "SERVICES_UP": true,
+  "Service_Protocol_Coverage": {
+       "PING_TCP_NETWORK": true,
+       "LOG_CHECK": true,
+       "ACTIVATE_ENDPOINT": true
+  },
+  "Resources_Up": {
+       "VOLUME_PERMITS": true
+  },
+  "Everything_Up": {
+       "PING_TCP_NETWORK": true,
+       "VOLUME_PERMITS": true,
+       "LOG_CHECK": true,
+       "ACTIVATE_ENDPOINT": true    
+  },
+  "Endpoints_coverage": {
     "PING_TCP_NETWORK": true,
-    "VOLUME_PERMITS": true
-  },
-
-  "SERVICE_AVAILABILITY": {
-    "SERVICES_UP": true,
-    "PING_TCP_NETWORK": true,
-    "LOG_CHECK": true,
-    "VOLUME_PERMITS": true,
-    "ACTIVATE_ENDPOINT": true
-  },
-
-  "COMMUNICATION_BTW_SERVICE": {
-    "PING_TCP_NETWORK": true,
-    "SERVICES_UP": true,
     "LOG_CHECK": true,
     "VOLUME_PERMITS": true,
     "ACTIVATE_ENDPOINT": true,
     "CROSS_LOGS": true
   },
-
-  "ENDPOINTS_AVAILABILITY": {
-    "SERVICES_UP": true,
+  "Full_Service_Coverage": {
     "PING_TCP_NETWORK": true,
     "LOG_CHECK": true,
     "VOLUME_PERMITS": true,
     "ACTIVATE_ALL_ENDPOINT": true,
     "CROSS_LOGS": true
+  },
+  "Full_Service_Coverage": {
+    "CROSS_LOGS": true
+  },
+  "Dependency_coverage": {
+    "CROSS_LOGS": true
+  },
+  "System_coverage": {
+    "CROSS_LOGS": true
   }
-
 }
-
-

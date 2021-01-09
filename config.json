@@ -8,9 +8,14 @@
     "WAIT_TIME_SECONDS": 10,
     "RETRIES_NUMBER": 0,
     "TO_BREAK_PIPELINE": true,
-    "SMOKE_TEST_CRITERIA": "ENDPOINTS_AVAILABILITY",
+    "SMOKE_TEST_CRITERIA": "Endpoints_coverage",
     "CLEAN_LOGS_REPORTS_NUMBER": 4,
     "MONITORING_TIME": 20,
+    
+     "SERVICES_NAME": [
+       "edutelling",
+       "edutelling-api"
+    ],
    
     "LOG_ALWAWS_SEARCH_IN_LOWER_CASE": true,
     "LOG_NUMBER_OF_LINE": 10,
@@ -48,4 +53,5 @@
       }
     ]
   }
+  
 }
