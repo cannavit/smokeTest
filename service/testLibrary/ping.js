@@ -2,6 +2,7 @@ const ping = require("pingman");
 const log = require("../../util/logger")("editionService");
 const tc = require("timezonecomplete");
 
+
 var shell = require("shelljs");
 const _ = require("lodash");
 const env = process.env.NODE_ENV || "dev";
@@ -12,6 +13,7 @@ let config = require("../../config.json");
 const ora = require("ora");
 const Table2 = require("cli-table");
 const createTable = require("../../util/table");
+
 
 
 const getConfigVariable_ENV = require("../../util/getConfigVariable")
@@ -186,28 +188,29 @@ async function checkMultiService(SERVICES) {
     const Table = require("tty-table");
     const { result } = require("lodash");
     
-    async function checkNetwork() {
+    async function checkNetwork(config=undefined) {
       // Check ntc net
       // Print table result.
       
-      const { SERVICES_NAME } = await getConfigVariable_ENV.ConfigCommands()
       
-      let services = SERVICES_NAME
-      
+      //! Load configuration: 
+      let services
 
-      console.log("ping --------", services)
+      if (config === undefined){
+        const { SERVICES_NAME } = await getConfigVariable_ENV.ConfigCommands()
+        services = SERVICES_NAME
+      } else {
+        services = config.SERVICES_NAME
+      } 
+
       if (services === "") {
         
         services = await selectService.getPort();
         
     log.warn(' USE SERVICES NAME OF AUTOMATIC WAY')
- 
   } else {
- 
     log.warn(' USE SERVICES NAME OF CONFIG.JSON')
- 
   }
-  
   
   results = await checkMultiService(services);
 

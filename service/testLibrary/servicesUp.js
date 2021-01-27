@@ -2,23 +2,33 @@ const getCommand = require("../dictionary/getCommand");
 const Table      = require("tty-table");
 const ora        = require("ora");
 const getConfigVariable_ENV = require("../../util/getConfigVariable")
-async function status() {
+
+async function status(config=undefined) {
 
   //! Load configuration.
-  const {SERVICES_NAME} = await getConfigVariable_ENV.ConfigCommands()
-  
+  let services 
+  //! Get service name
+  let Name  
+
+  if (config === undefined) {
+    const { SERVICES_NAME } = await getConfigVariable_ENV.ConfigCommands()
+    services = SERVICES_NAME
+    const name = await getCommand.getListResutls("SERVICE");
+    Name = name;
+  } else {
+    const SERVICES_NAME2 = config.SERVICES_NAME
+    services = SERVICES_NAME2
+    const name2 = SERVICES_NAME2
+    Name = name2
+  }
   
   let keyWold = 'Exited'
   //! Get service down
   let servicesName     = await getCommand.getListResutls("STATUS");
   let servicesDisabled = await getCommand.searchInOutput("STATUS", keyWold);
   
-  //! Get service name
-  let Name = await getCommand.getListResutls("SERVICE");
-  
   //!Control is all services exist inside to Container Manager: 
 
-  let services        = SERVICES_NAME
   let lackService     = false
   let nameLackService = []
 
@@ -26,7 +36,7 @@ async function status() {
 
     for (const key in services) {
 
-      serviceConfigName = services[key]
+      let serviceConfigName = services[key]
 
       if (!Name.includes(serviceConfigName)){
             lackService = true
@@ -37,6 +47,7 @@ async function status() {
 
   }
   
+
   let tableData = [];
   if (lackService) {
     for (const key in nameLackService) {
@@ -50,22 +61,29 @@ async function status() {
     }
     
   } 
-
+  
   //! Remove name of smoke-test service.  
   let smokeTestContainerName = global.config.project.name
 
   //! Create Table:
+  let passTest = false
+
   for (const key in Name) {
+
     let name = Name[key];
     let servicesname = servicesName[key];
+    console.log('keyWold:', keyWold)
     let existKeyWold = servicesname.search(keyWold);
     let existD
-
+    
     if (existKeyWold !== -1 && name != smokeTestContainerName) {
       existD = false;
+      passTest = true
     } else {
       existD = true;
+      passTest = false;
     }
+    
     
     if (name != smokeTestContainerName) {
 
@@ -74,11 +92,11 @@ async function status() {
         description: servicesname,
         activeService: String(existD),
       });
-    
+      
     }
-
+    
   }
-
+  
   //! Add spinner.
   let spinner = ora("Check if all services are UP").start();
 
@@ -109,10 +127,14 @@ async function status() {
       },
     ];
     const t3 = Table(header, tableData);
+
+
     console.log(t3.render());
   }
 
-  return servicesDisabled;
+  const dataResult = { "servicesDisabled": servicesDisabled,  "passTest": passTest } 
+
+  return dataResult;
 }
 
 module.exports.status = status;

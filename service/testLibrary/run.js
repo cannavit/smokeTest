@@ -9,7 +9,7 @@ const isNumber     = require('is-number');
 // RUN CASES
 
 
-const tcp          = (selectService = require("./ping"));
+const tcp          = require("./ping");
 const checkLogs    = require("./checkLogs");
 const serviceUp    = require("./servicesUp");
 const tc           = require("timezonecomplete");
@@ -160,8 +160,11 @@ async function smktests() {
 
     //! Test name: SERVICES_UP 
     if ((selectTest[testCases].SERVICES_UP || false)) {
-      let servicesDisabled = await serviceUp.status();
+      let { servicesDisabled  }  = await serviceUp.status();
+      
+      { servicesDisabled }
       service_up_success = !servicesDisabled.detectWord
+    
     }
     //! Test name: ACTIVATE_ENDPOINT
     if ((selectTest[testCases].ACTIVATE_ENDPOINT || false)) {
@@ -179,6 +182,7 @@ async function smktests() {
       cross_logs_success = passCrossLogsTest
     }
     
+   
     
     //? ---------------------------------------------------------------------------------------------
     //! Apply criterial ACTIVATE_ALL_ENDPOINT: Test ...
