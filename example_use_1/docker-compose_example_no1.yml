@@ -1,16 +1,9 @@
+# docker-compose.yml
 version: '3.7'
 services:
-  smkzipi:
-    image: cannit/zipi_smktest:latest
-    privileged: true
-    command: 'node app.js'
-    environment:
-      NODE_ENV: 'experiments'
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-  mongodb:
+  database:
     image: mongo:latest
-    container_name: mongodb
+    container_name: database
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: admin
@@ -19,5 +12,42 @@ services:
       MONGODB_DATABASE: admin
     ports:
       - 27017:27017
+    networks:
+      - host      
+
+  backend:
+    image: cannit/zipi_backend_example_1:latest
+    container_name: backend
+    ports:
+      - 8000:8000
+    depends_on:
+      - database  
+    environment:
+      - DJANGO_ENV=docker  
+    command:  >
+          bash -c "python manage.py migrate
+          && python manage.py shell -c \"from django.contrib.auth.models import User; User.objects.filter(username='admin1').exists() or User.objects.create_superuser('admin', 'admin1@example.com', 'admin')\"
+          && python manage.py runserver 0.0.0.0:8000"
+    networks:
+      - host
+
+  smoke-test: 
+    image:  cannit/zipi_smktest:latest
+    container_name: smoke-test
+    depends_on:
+      - backend
+    privileged: true  
     volumes:
-      - ../marnt-task-mongodb/db_volume:/data/db
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - ZIPI_CONFIGURATION=env_variable
+      - RETRIES_NUMBER=0
+      - TO_BREAK_PIPELINE=false
+      - ENDPOINT_HOST=http://backend:8000
+      - SERVICES_NAME="['database','backend']"
+      - LOGS_ERROR_EXCEPTION="['Watching for file changes with StatReloader']"
+    networks:
+      - host 
+
+networks:
+  host:

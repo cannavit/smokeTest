@@ -1,24 +1,13 @@
-const ping = require("pingman");
 const log = require("../../util/logger")("editionService");
 const tc = require("timezonecomplete");
-
-
 var shell = require("shelljs");
 const _ = require("lodash");
-const env = process.env.NODE_ENV || "dev";
-let config = require("../../config.json");
-
 
 // LOGS
 const ora = require("ora");
-const Table2 = require("cli-table");
-const createTable = require("../../util/table");
-
-
 
 const getConfigVariable_ENV = require("../../util/getConfigVariable")
 
-global.config = _.merge(config["dev"], config[env]);
 // LOGS
 function sleep(milliseconds) {
   const date = Date.now();
@@ -29,10 +18,10 @@ function sleep(milliseconds) {
 }
 
 async function check(service) {
-  let response = "";
-  try {
-    // response = await ping(service);
 
+  let response = "";
+  
+  try {
     var noTrys = 1;
     if (service.port !== "") {
 
@@ -67,10 +56,9 @@ async function check(service) {
 
 async function checkMultiService(SERVICES) {
   
-  
   //! GET CONFIGURATION: 
   
-  const {MODE_CONNECT, WAIT_TIME_SECONDS } = await getConfigVariable_ENV.ConfigCommands()
+  const {MODE_CONNECT, WAIT_TIME_SECONDS, SERVICES_NAME } = await getConfigVariable_ENV.ConfigCommands()
   
   // Evaluate diferets services for to check it.
   var start = new tc.nowUtc();
@@ -96,14 +84,14 @@ async function checkMultiService(SERVICES) {
     }
     
     // code block to be executed
-    for (let index = 0; index < SERVICES.length; index++) {
+    for (let index = 0; index < SERVICES_NAME.length; index++) {
       trys = trys + 1;
       cont2 = cont2 + 1;
       
       if (PASS_TEST.indexOf(index) === -1 || START) {
         START = false;
         
-        const service = SERVICES[index];
+        const service = SERVICES_NAME[index];
         
         if (MODE_CONNECT === "manual") {
           serviceFilter = service.ip;
@@ -132,7 +120,7 @@ async function checkMultiService(SERVICES) {
             );
             PASS_TEST.push(index);
             SUCCESS = SUCCESS + 1;
-            if (SUCCESS === SERVICES.length) {
+            if (SUCCESS === SERVICES_NAME.length) {
               STOP = true;
             }
           } else {

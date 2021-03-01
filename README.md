@@ -54,7 +54,10 @@ You can use the following example to understand how it works in service. In this
 
 ### Case: Pase Test
 In this case, two services are shown that have to be connected in order to function. The first service is a database (MongoDB) and the second service is the Django backend, with a JWT authentication service.
-Is neccesary for this example suite create one file with the name docker-compose.yml
+Is necessary for this example suite create one file with the name docker-compose.yml
+
+
+     docker-compose -f example_use_1/docker-compose_example_no1.yml up -d
 
 #### 1) Run example_1 using docker-compose.yml (IN PROCESS*)
     # docker-compose.yml
