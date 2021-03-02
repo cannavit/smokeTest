@@ -92,7 +92,9 @@ async function checkMultiService(SERVICES) {
         START = false;
         
         const service = SERVICES_NAME[index];
-        
+        console.log("SERVICES_NAME :", SERVICES_NAME);
+        console.log("SERVICE       :", service);
+
         if (MODE_CONNECT === "manual") {
           serviceFilter = service.ip;
           serviceName = service.service;

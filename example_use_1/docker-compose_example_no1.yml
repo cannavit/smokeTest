@@ -32,7 +32,7 @@ services:
       - host
 
   smoke-test: 
-    image:  cannit/zipi_smktest:latest
+    image:  smktest2021/smktest:latest
     container_name: smoke-test
     depends_on:
       - backend
@@ -40,12 +40,34 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
+      - PROJECT_NAME=example2_how_use_criterial
       - ZIPI_CONFIGURATION=env_variable
+      - MODE_CONNECT=docker
+      - SMOKE_TEST_CRITERIA=Service_Protocol_Coverage    
       - RETRIES_NUMBER=0
       - TO_BREAK_PIPELINE=false
       - ENDPOINT_HOST=http://backend:8000
-      - SERVICES_NAME="['database','backend']"
+      - SERVICES_NAME=['database','backend']
       - LOGS_ERROR_EXCEPTION="['Watching for file changes with StatReloader']"
+      - LOG_NUMBER_OF_LINE=5
+      - LOG_KEYWORD=['error','TypeError']
+      - CLEAN_LOGS_REPORTS_NUMBER=4
+      - WAIT_TIME_SECONDS=10
+      - MONITORING_TIME=10
+      - ENDPOINT_SWAGGER_PAGE=curl -XPOST \
+                          --header 'accept-language:it' \
+                          --header 'Content-Type:application/json' \
+                          'http://localhost:3000/api/v1/api-docs',
+      - ENDPOINT_SCANN_SWAGGER_FROM=curl -XPOST \
+                                    -H 'accept-language:it' \  
+                                    -H 'Content-type:application/json' \
+                                    'http://localhost:3000/api/v1/api-docs',
+      - ENDPOINT_GET_TOKEN=curl -XPOST \
+                           -H 'accept-language:it' \ 
+                           -H 'Content-type:application/json' \
+                            -d '{"email":"formazione@edutelling.it","password":"Passw0rd"}' \
+                            'http://localhost:3000/api/v1/auth/authentication' 
+
     networks:
       - host 
 

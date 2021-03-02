@@ -16,7 +16,7 @@ services:
       - host
 
   smoke-test: 
-    image:  cannit/zipi_smktest:latest
+    image:  smktest2021/smktest:latest
     container_name: smoke-test
     depends_on:
       - backend
@@ -31,10 +31,10 @@ services:
       - RETRIES_NUMBER=0
       - TO_BREAK_PIPELINE=false
       - ENDPOINT_HOST=http://backend:8000
-      - SERVICES_NAME="['database','backend']"
+      - SERVICES_NAME=['database','backend']
       - LOGS_ERROR_EXCEPTION="['Watching for file changes with StatReloader']"
       - LOG_NUMBER_OF_LINE=5
-      - LOG_KEYWORD="['error','TypeError']"
+      - LOG_KEYWORD=['error','TypeError']
       - CLEAN_LOGS_REPORTS_NUMBER=4
       - WAIT_TIME_SECONDS=10
       - MONITORING_TIME=10
