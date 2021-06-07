@@ -168,7 +168,7 @@ This example recreates a stability problem in the absence of the database. The s
           - host 
     networks:
       host:
-## Use of Enviroment variable in Zipi-Smk-Service
+## Use of Enviroment variable:
 
 The following are the environment variables that can be modified in the service.
 
