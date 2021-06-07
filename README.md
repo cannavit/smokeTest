@@ -7,10 +7,10 @@
 [![GitHub](https://img.shields.io/badge/-mongodb-43A617?style=flat-square&labelColor=43A617&logo=mongodb&logoColor=white&link)](https://www.mongodb.com/developer-tools)
 
 
-<p align="left" src="https://cecilio-cannav.github.io/zipi-smkTest/">
+<!-- <p align="left" src="https://cecilio-cannav.github.io/zipi-smkTest/">
   <img src="https://raw.githubusercontent.com/cecilio-cannav/zipi-smkTest/master/docs/zipi.png" width="256" title="Smoke-Test">
 </p>
-
+ -->
 smokeTest: 
 ====================
 Zipi-SmkTest: Is a service developed to avoid sporadic failures in development environments. Applying Smoke-Test techniques. The service performs verifications of environments composed of micro-services. It is a great alternative to remediate sporadic failures that cause wasted time in later stages of development.
